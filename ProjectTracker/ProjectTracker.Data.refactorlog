@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="e423ef00-c3a0-4d04-940e-a96cc81154f2" ChangeDateTime="04/24/2018 18:23:13">
+    <Property Name="ElementName" Value="[dbo].[ProjectListHist].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProjectListHist]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="HistId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="745d9da1-5a5c-436f-95d6-6206135642c1" ChangeDateTime="04/24/2018 18:23:49">
+    <Property Name="ElementName" Value="[dbo].[ProjectListHist].[ProjectListId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProjectListHist]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProjectId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e93c3169-73ea-42e4-b04c-966c93c387d6" ChangeDateTime="04/24/2018 19:06:15">
+    <Property Name="ElementName" Value="[Audit].[ProjectListHist].[NewNewProjectPhaseId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Audit].[ProjectListHist]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NewProjectPhaseId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0b0a9f86-4e90-4282-9759-e002ba6cd3f2" ChangeDateTime="04/30/2018 18:29:16">
+    <Property Name="ElementName" Value="[dbo].[Projects].[ProjectManagerEmployId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Projects]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProjectManager" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d31c494-f934-4608-8638-13326e3acb48" ChangeDateTime="04/30/2018 18:31:15">
+    <Property Name="ElementName" Value="[Audit].[ProjectHist].[OldProjectManagerEmployId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Audit].[ProjectHist]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OldProjectManager" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="93c243f7-4c9b-46fe-bb47-521680df4a13" ChangeDateTime="04/30/2018 18:31:26">
+    <Property Name="ElementName" Value="[Audit].[ProjectHist].[NewProjectManagerEmployId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[Audit].[ProjectHist]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="NewProjectManager" />
+  </Operation>
+</Operations>

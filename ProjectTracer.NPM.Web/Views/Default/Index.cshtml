@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Project Tracker";
+}
+
+
+<div id="ProjectTrackerApp" style="display: none;">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8" style="min-height: 100% !important; padding: 10px; border-left: 1px solid #c1c5c8 !important; border-right: 1px solid #c1c5c8 !important; background-color: whitesmoke;">
+        <img src="~/Content/images/DoleseHeader.png" class="pull-left" />
+        <h1>IT Project List</h1>
+        <div class="box">
+           <project-tracker></project-tracker>
+        </div>
+
+    </div>
+    <div class="col-lg-2"></div>
+</div>
+<script>
+
+    var appElement = $("#ProjectTrackerApp");
+    angular.element(appElement).ready(function () {
+        angular.bootstrap(appElement, ["ProjectTrackerApp"])
+        appElement.css("display", "");
+    });
+</script>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Dolese Project Tracker</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <!-- Bootstrap 3.3.5 -->
+
+
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-touch.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.js"></script>
+    
+    
+    <script src="~/Scripts/Apps/ProjectTrackerApp.js"></script>
+    <script src="~/Scripts/Utilities/EventUtility.js"></script>
+    <script src="~/Scripts/ViewModels/ProjectTrackerAdminViewModel.js"></script>
+    <script src="~/Scripts/ViewModels/ProjectTrackerDetailRecordViewModel.js"></script>
+    <script src="~/Scripts/ViewModels/ProjectTrackerDetailViewModel.js"></script>
+    <script src="~/Scripts/ViewModels/ProjectTrackerListViewModel.js"></script>
+    <script src="~/Scripts/Models/StatusModel.js"></script>
+    <script src="~/Scripts/Models/TypeModel.js"></script>
+    <script src="~/Scripts/Models/PhaseModel.js"></script>
+    <script src="~/Scripts/Models/ProjectModel.js"></script>
+    <script src="~/Scripts/Utilities/DateUtility.js"></script>
+    <script src="~/Scripts/DataAccess/ProjectPhasesDataAccess.js"></script>
+    <script src="~/Scripts/DataAccess/ProjectStatusesDataAccess.js"></script>
+    <script src="~/Scripts/DataAccess/ProjectTypesDataAccess.js"></script>
+    <script src="~/Scripts/DataAccess/ProjectsDataAccess.js"></script>
+    <script src="~/Scripts/Utilities/PageQuantityUtility.js"></script>
+    <script src="~/Scripts/Utilities/GridUtility.js"></script>
+    <script src="~/Scripts/Apps/ProjectTracker.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+</head>
+<body>
+    @RenderBody()
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        var rootUrl = "@ProjectTracker.Web.Utilities.RootUrlUtility.GetRootURL()";
+    </script>
+</body>
+</html>

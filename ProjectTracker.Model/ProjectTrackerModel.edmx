@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProjectTracker.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ProjectPhases">
+          <Key>
+            <PropertyRef Name="ProjectPhaseId" />
+          </Key>
+          <Property Name="ProjectPhaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectPhaseName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ProjectPhaseDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectTypeId" Type="int" />
+          <Property Name="ProjectStatusId" Type="int" />
+          <Property Name="IsInternalIT" Type="bit" />
+          <Property Name="ProjectName" Type="varchar" MaxLength="150" />
+          <Property Name="ProjectOwner" Type="varchar" MaxLength="50" />
+          <Property Name="ProjectManager" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="ProjectPhaseId" Type="int" />
+          <Property Name="PhasePercentComplete" Type="int" />
+          <Property Name="PhaseEndDate" Type="date" />
+          <Property Name="OverallPercentComplete" Type="int" />
+          <Property Name="ProjectEndDate" Type="date" />
+          <Property Name="IsWaiting" Type="bit" />
+          <Property Name="Comments" Type="varchar(max)" />
+          <Property Name="ProjectDescription" Type="varchar" MaxLength="5000" />
+        </EntityType>
+        <EntityType Name="ProjectStatuses">
+          <Key>
+            <PropertyRef Name="ProjectStatusId" />
+          </Key>
+          <Property Name="ProjectStatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectStatusName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ProjectStatusDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectTypes">
+          <Key>
+            <PropertyRef Name="ProjectTypeId" />
+          </Key>
+          <Property Name="ProjectTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectTypeName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ProjectTypeDescription" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Projects_ProjectPhases">
+          <End Role="ProjectPhases" Type="Self.ProjectPhases" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPhases">
+              <PropertyRef Name="ProjectPhaseId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectPhaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectStatuses">
+          <End Role="ProjectStatuses" Type="Self.ProjectStatuses" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatuses">
+              <PropertyRef Name="ProjectStatusId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectTypes">
+          <End Role="ProjectTypes" Type="Self.ProjectTypes" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTypes">
+              <PropertyRef Name="ProjectTypeId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectTrackerStoreContainer">
+          <EntitySet Name="ProjectPhases" EntityType="Self.ProjectPhases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectStatuses" EntityType="Self.ProjectStatuses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectTypes" EntityType="Self.ProjectTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Projects_ProjectPhases" Association="Self.FK_Projects_ProjectPhases">
+            <End Role="ProjectPhases" EntitySet="ProjectPhases" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectStatuses" Association="Self.FK_Projects_ProjectStatuses">
+            <End Role="ProjectStatuses" EntitySet="ProjectStatuses" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectTypes" Association="Self.FK_Projects_ProjectTypes">
+            <End Role="ProjectTypes" EntitySet="ProjectTypes" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectTracker" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ProjectPhase">
+          <Key>
+            <PropertyRef Name="ProjectPhaseId" />
+          </Key>
+          <Property Name="ProjectPhaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectPhaseName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProjectPhaseDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_ProjectPhases" FromRole="ProjectPhases" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectId" />
+          </Key>
+          <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectTypeId" Type="Int32" />
+          <Property Name="ProjectStatusId" Type="Int32" />
+          <Property Name="IsInternalIT" Type="Boolean" />
+          <Property Name="ProjectName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectManager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="ProjectPhaseId" Type="Int32" />
+          <Property Name="PhasePercentComplete" Type="Int32" />
+          <Property Name="PhaseEndDate" Type="DateTime" Precision="0" />
+          <Property Name="OverallPercentComplete" Type="Int32" />
+          <Property Name="ProjectEndDate" Type="DateTime" Precision="0" />
+          <Property Name="IsWaiting" Type="Boolean" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProjectPhase" Relationship="Self.FK_Projects_ProjectPhases" FromRole="Projects" ToRole="ProjectPhases" />
+          <NavigationProperty Name="ProjectStatus" Relationship="Self.FK_Projects_ProjectStatuses" FromRole="Projects" ToRole="ProjectStatuses" />
+          <NavigationProperty Name="ProjectType" Relationship="Self.FK_Projects_ProjectTypes" FromRole="Projects" ToRole="ProjectTypes" />
+          <Property Name="ProjectDescription" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProjectStatus">
+          <Key>
+            <PropertyRef Name="ProjectStatusId" />
+          </Key>
+          <Property Name="ProjectStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectStatusName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProjectStatusDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_ProjectStatuses" FromRole="ProjectStatuses" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="ProjectTypeId" />
+          </Key>
+          <Property Name="ProjectTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectTypeName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProjectTypeDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_ProjectTypes" FromRole="ProjectTypes" ToRole="Projects" />
+        </EntityType>
+        <Association Name="FK_Projects_ProjectPhases">
+          <End Role="ProjectPhases" Type="ProjectTracker.ProjectPhase" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectPhases">
+              <PropertyRef Name="ProjectPhaseId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectPhaseId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectStatuses">
+          <End Role="ProjectStatuses" Type="Self.ProjectStatus" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectStatuses">
+              <PropertyRef Name="ProjectStatusId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectTypes">
+          <End Role="ProjectTypes" Type="Self.ProjectType" Multiplicity="0..1" />
+          <End Role="Projects" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTypes">
+              <PropertyRef Name="ProjectTypeId" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="ProjectTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectTrackerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProjectPhases" EntityType="ProjectTracker.ProjectPhase" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="ProjectStatuses" EntityType="Self.ProjectStatus" />
+          <EntitySet Name="ProjectTypes" EntityType="Self.ProjectType" />
+          <AssociationSet Name="FK_Projects_ProjectPhases" Association="Self.FK_Projects_ProjectPhases">
+            <End Role="ProjectPhases" EntitySet="ProjectPhases" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectStatuses" Association="Self.FK_Projects_ProjectStatuses">
+            <End Role="ProjectStatuses" EntitySet="ProjectStatuses" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectTypes" Association="Self.FK_Projects_ProjectTypes">
+            <End Role="ProjectTypes" EntitySet="ProjectTypes" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectTrackerStoreContainer" CdmEntityContainer="ProjectTrackerEntities">
+          <EntitySetMapping Name="ProjectPhases">
+            <EntityTypeMapping TypeName="ProjectTracker.ProjectPhase">
+              <MappingFragment StoreEntitySet="ProjectPhases">
+                <ScalarProperty Name="ProjectPhaseId" ColumnName="ProjectPhaseId" />
+                <ScalarProperty Name="ProjectPhaseName" ColumnName="ProjectPhaseName" />
+                <ScalarProperty Name="ProjectPhaseDescription" ColumnName="ProjectPhaseDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="ProjectTracker.Project">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+                <ScalarProperty Name="ProjectStatusId" ColumnName="ProjectStatusId" />
+                <ScalarProperty Name="IsInternalIT" ColumnName="IsInternalIT" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectOwner" ColumnName="ProjectOwner" />
+                <ScalarProperty Name="ProjectManager" ColumnName="ProjectManager" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ProjectPhaseId" ColumnName="ProjectPhaseId" />
+                <ScalarProperty Name="PhasePercentComplete" ColumnName="PhasePercentComplete" />
+                <ScalarProperty Name="PhaseEndDate" ColumnName="PhaseEndDate" />
+                <ScalarProperty Name="OverallPercentComplete" ColumnName="OverallPercentComplete" />
+                <ScalarProperty Name="ProjectEndDate" ColumnName="ProjectEndDate" />
+                <ScalarProperty Name="IsWaiting" ColumnName="IsWaiting" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectStatuses">
+            <EntityTypeMapping TypeName="ProjectTracker.ProjectStatus">
+              <MappingFragment StoreEntitySet="ProjectStatuses">
+                <ScalarProperty Name="ProjectStatusId" ColumnName="ProjectStatusId" />
+                <ScalarProperty Name="ProjectStatusName" ColumnName="ProjectStatusName" />
+                <ScalarProperty Name="ProjectStatusDescription" ColumnName="ProjectStatusDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectTypes">
+            <EntityTypeMapping TypeName="ProjectTracker.ProjectType">
+              <MappingFragment StoreEntitySet="ProjectTypes">
+                <ScalarProperty Name="ProjectTypeId" ColumnName="ProjectTypeId" />
+                <ScalarProperty Name="ProjectTypeName" ColumnName="ProjectTypeName" />
+                <ScalarProperty Name="ProjectTypeDescription" ColumnName="ProjectTypeDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
