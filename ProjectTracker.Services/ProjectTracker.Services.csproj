@@ -171,69 +171,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\helpers.js" />
-    <Content Include="config\index.html" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\DoleseHeader.png" />
     <Content Include="Content\Site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="config\webpack.dev.js" />
     <TypeScriptCompile Include="index.ts" />
-    <TypeScriptCompile Include="polyfills.ts" />
-    <TypeScriptCompile Include="Scripts\Apps\Main.ts" />
-    <TypeScriptCompile Include="Scripts\Apps\ProjectTrackerApp.ts" />
-    <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="Scripts\angular-resource.min.js.map" />
-    <TypeScriptCompile Include="Scripts\Apps\ProjectTracker.ts" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <TypeScriptCompile Include="Scripts\DataAccess\ProjectPhasesDataAccess.ts" />
-    <TypeScriptCompile Include="Scripts\DataAccess\ProjectsDataAccess.ts" />
-    <TypeScriptCompile Include="Scripts\DataAccess\ProjectStatusesDataAccess.ts" />
-    <TypeScriptCompile Include="Scripts\DataAccess\ProjectTypesDataAccess.ts" />
-    <Content Include="package-lock.json" />
-    <Content Include="package.json" />
     <None Include="Properties\PublishProfiles\ProjectTrackerToProd.pubxml" />
     <None Include="Properties\PublishProfiles\ProjectTrackerToTest.pubxml" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <TypeScriptCompile Include="Scripts\Models\PhaseModel.ts" />
-    <TypeScriptCompile Include="Scripts\Models\ProjectModel.ts" />
-    <TypeScriptCompile Include="Scripts\Models\StatusModel.ts" />
-    <TypeScriptCompile Include="Scripts\Models\TypeModel.ts" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
-    <TypeScriptCompile Include="Scripts\Utilities\DateUtility.ts" />
-    <TypeScriptCompile Include="Scripts\Utilities\EventUtility.ts" />
-    <TypeScriptCompile Include="Scripts\Utilities\GridUtility.ts" />
-    <TypeScriptCompile Include="Scripts\Utilities\PageQuantityUtility.ts" />
-    <TypeScriptCompile Include="Scripts\ViewModels\ProjectTrackerAdminViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\ViewModels\ProjectTrackerDetailRecordViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\ViewModels\ProjectTrackerDetailViewModel.ts" />
-    <TypeScriptCompile Include="Scripts\ViewModels\ProjectTrackerListViewModel.ts" />
-    <Content Include="Templates\ProjectTracker.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Default\Index.cshtml" />
-    <TypeScriptCompile Include="Scripts\Apps\ng\app.component.ts" />
-    <TypeScriptCompile Include="Scripts\Apps\ng\app.module.ts" />
-    <TypeScriptCompile Include="vendor.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\RootUrlUtility.cs" />
     <Content Include="App_Code\Settings.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\ProjectPhasesController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ProjectStatusesController.cs" />
@@ -244,19 +197,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
-    <Content Include="packages.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="tsconfig.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -266,8 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="dist\dev\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -295,6 +236,8 @@
           <DevelopmentServerPort>56595</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50873/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:50873/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

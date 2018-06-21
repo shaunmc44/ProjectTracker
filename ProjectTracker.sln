@@ -7,7 +7,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProjectTracker.Data", "Proj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Model", "ProjectTracker.Model\ProjectTracker.Model.csproj", "{77C81692-2271-4BCF-8BA4-56A51ECF6158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Web", "ProjectTracker.Web\ProjectTracker.Web.csproj", "{F861D470-8295-4184-9DED-DB3DF09187EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Services", "ProjectTracker.Web\ProjectTracker.Services.csproj", "{F861D470-8295-4184-9DED-DB3DF09187EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
