@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
-namespace ProjectTracker.Web.Utilities
+namespace ProjectTracker.Services.Utilities
 {
     public static class Settings
     {

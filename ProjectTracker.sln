@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProjectTracker.Data", "ProjectTracker\ProjectTracker.Data.sqlproj", "{3FC3ABA6-25EB-4959-8C0C-3B9FB0444A5E}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProjectTracker.Data", "ProjectTracker.Data\ProjectTracker.Data.sqlproj", "{3FC3ABA6-25EB-4959-8C0C-3B9FB0444A5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Model", "ProjectTracker.Model\ProjectTracker.Model.csproj", "{77C81692-2271-4BCF-8BA4-56A51ECF6158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Services", "ProjectTracker.Web\ProjectTracker.Services.csproj", "{F861D470-8295-4184-9DED-DB3DF09187EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectTracker.Services", "ProjectTracker.Services\ProjectTracker.Services.csproj", "{F861D470-8295-4184-9DED-DB3DF09187EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

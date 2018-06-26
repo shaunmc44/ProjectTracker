@@ -11,10 +11,11 @@ using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
 using System.Web.Http.OData.Routing;
 using ProjectTracker.Model;
+using System.Web.Http.Cors;
 
-namespace ProjectTracker.Web.Controllers
+namespace ProjectTracker.Services.Controllers
 {
-
+    
     public class ProjectStatusesController : ODataController
     {
         private ProjectTrackerEntities db = new ProjectTrackerEntities();
